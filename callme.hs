@@ -41,7 +41,7 @@ inds :: [Int] -> [[Char]] -> [Char]
 inds is as = indinn is as []
 
 innprint :: [[Char]] -> Int -> IO ()
-innprint _     (-1) = exitWith ExitSuccess
+innprint _     (-1) = return ()
 innprint str   num  = do
   putStrLn (inds (padarr (length str) (toternary num)) str)
   innprint str (num - 1)
